@@ -132,4 +132,11 @@ body {
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
 }
+
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 100%;
+    max-width: 100%;
+  }
+}
 /*# sourceMappingURL=main.css.map */
