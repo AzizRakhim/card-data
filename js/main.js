@@ -1,18 +1,11 @@
 let elList = document.querySelector(".hero__list");
 
-let elRequest = new XMLHttpRequest();
+fetch("https://reqres.in/api/users")
+  .then((res) => res.json())
+  .then((data) => {
+    showHTML(data);
+  });  
 
-elRequest.open("GET", "https://reqres.in/api/users");
-
-elRequest.onload = function() {
-  let elData = JSON.parse(elRequest.responseText);
-
-  showHTML(elData);
-}
-
-elRequest.send();
-
-elCount = 1;
 function showHTML(elData){
   elData.data.forEach((element) => {
     let elItem = document.createElement("li");
